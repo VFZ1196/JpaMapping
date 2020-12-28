@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ITEMS")
+@Table
 public class Items {
 	
 	@Id
@@ -18,13 +18,13 @@ public class Items {
 	@Column
 	private long id;
 	
-	@Column(name="item_name")
+	@Column
 	private String itemName;
 	
-	@Column(name="description")
+	@Column
 	private String description;
 	
-	@Column(name="item_type")
+	@Column
 	private String itemType;
 	
 	@ManyToOne()

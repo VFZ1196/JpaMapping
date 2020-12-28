@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CART")
+@Table
 public class Cart {
 	
 	@Id
@@ -20,7 +20,7 @@ public class Cart {
 	@Column(name="cart_id")
 	private long id;
 	
-	@Column(name="cart_name")
+	@Column
 	private String cartName;
 
 	@OneToMany(mappedBy = "cart")

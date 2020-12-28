@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import springbootOneToMany.model.Cart;
+import springbootOneToMany.model.Items;
 import springbootOneToMany.repository.CartRepository;
 
 @RestController
@@ -19,7 +20,7 @@ public class CartController {
 	
 	@GetMapping("/cart")
 	public List<Cart> getAll(){
-		return repo.findAll();
+		return repo.findByOrderById();
 	}
 	/*
 	@PostMapping("/cart")
