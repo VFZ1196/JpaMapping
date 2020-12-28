@@ -8,23 +8,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import springbootOneToMany.model.Cart;
-import springbootOneToMany.repository.CartRepository;
+import springbootOneToMany.model.Items;
+import springbootOneToMany.repository.ItemRepository;
 
 @RestController
-public class CartController {
+public class ItemController {
 	
 	@Autowired
-	CartRepository repo;
+	ItemRepository ItemRepo;
 	
-	@GetMapping("/cart")
-	public List<Cart> getAll(){
-		return repo.findAll();
+	@GetMapping("/item")
+	public List<Items> getAll(){
+		return ItemRepo.findByOrderById();
 	}
 	/*
-	@PostMapping("/cart")
-	public Cart add(@RequestBody Cart c) {
-		return repo.save(c);
+	@PostMapping("/item")
+	public Items add(@RequestBody Items i) {
+		return ItemRepo.save(i);
 	}
 */
+
 }
