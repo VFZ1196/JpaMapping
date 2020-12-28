@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,8 +15,8 @@ public class Items {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="cart_id")
-	private long cartId;
+	@Column
+	private long id;
 	
 	@Column(name="item_name")
 	private String itemName;
@@ -26,16 +27,16 @@ public class Items {
 	@Column(name="item_type")
 	private String itemType;
 	
-	//@JoinColumn(name="cart_id")
-	@ManyToOne(targetEntity = Cart.class)
+	@ManyToOne()
+	@JoinColumn(name="cart_id")
 	private Cart cart;
 
-	public long getItemId() {
-		return cartId;
+	public long getId() {
+		return id;
 	}
 
-	public void setItemId(long itemId) {
-		this.cartId = itemId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getItemName() {
@@ -69,5 +70,7 @@ public class Items {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-
+	
 }
+
+	
