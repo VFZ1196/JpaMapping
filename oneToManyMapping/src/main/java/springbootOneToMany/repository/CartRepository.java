@@ -12,8 +12,8 @@ import springbootOneToMany.model.Cart;
 public interface CartRepository extends JpaRepository<Cart, Long>{
 	@Query(value="select cart.cart_id, cart.cart_name,items.item_name"
 			+ " from cart"
-			+ " inner join items on cart.cart_id=items.cart_id",
+			+ " join items on cart.cart_id=items.cart_id",
 			nativeQuery = true)
-	List<Cart> findByOrderById();
+	List<Cart> findAll();
 
 }
