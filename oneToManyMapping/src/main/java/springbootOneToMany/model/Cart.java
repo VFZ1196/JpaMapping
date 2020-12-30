@@ -3,6 +3,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,8 +22,8 @@ public class Cart {
 	@Column
 	private String cartName;
 
-	@OneToMany(mappedBy = "cart")
-	private List<Items> item;
+	//@OneToMany(mappedBy = "cart")
+	//private List<Items> item;
 
 	public long getId() {
 		return id;
@@ -39,7 +40,7 @@ public class Cart {
 	public void setCartName(String cartName) {
 		this.cartName = cartName;
 	}
-
+/*
 	public List<Items> getItem() {
 		return item;
 	}
@@ -47,5 +48,5 @@ public class Cart {
 	public void setItem(List<Items> item) {
 		this.item = item;
 	}
-
+*/
 }

@@ -2,6 +2,7 @@ package springbootOneToMany.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,9 +28,9 @@ public class Items {
 	@Column
 	private String itemType;
 	
-	@ManyToOne()
-	@JoinColumn(name="cart_id")
-	private Cart cart;
+	//@ManyToOne()
+	//@JoinColumn(name="cart_id")
+	//private Cart cart;
 
 	public long getId() {
 		return id;
@@ -62,7 +63,7 @@ public class Items {
 	public void setItemType(String itemType) {
 		this.itemType = itemType;
 	}
-
+/*
 	public Cart getCart() {
 		return cart;
 	}
@@ -70,7 +71,7 @@ public class Items {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	
+*/
 }
 
 	
