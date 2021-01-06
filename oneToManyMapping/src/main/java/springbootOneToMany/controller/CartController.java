@@ -13,10 +13,10 @@ import springbootOneToMany.repository.CartRepository;
 public class CartController {
 	
 	@Autowired
-	CartRepository repo;
+	CartRepository cartRepository;
 	
 	@GetMapping("/cart")
 	public List<Cart> getAll(){
-		return repo.findAll();
+		return cartRepository.findAll();
 	}
 }
